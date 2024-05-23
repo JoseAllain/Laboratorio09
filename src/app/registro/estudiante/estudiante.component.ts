@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Importamos Router para la navegación
+import { Router } from '@angular/router';
 import { RouterLink } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 
 export class EstudianteComponent {
 
-  constructor(private router: Router) { } // Usar el router para navegación
+  constructor(private router: Router) { }
 
   estudiante = {
     apellido: "",
@@ -29,12 +29,11 @@ export class EstudianteComponent {
     tipo: "Estudiante"
   }
 
-  // Simplificamos el método de registro para que solo maneje la lógica del lado cliente
   singup() {
     if (this.validateData()) {
       alert("Registro Exitoso");
       this.resetEstudiante();
-      this.router.navigate(['/usuarios/login']); // Usar el Router para la redirección
+      this.router.navigate(['/usuarios/login']);
     } else {
       alert("Por favor, corrija los errores en el formulario.");
     }
@@ -51,7 +50,6 @@ export class EstudianteComponent {
     }
   }
 
-  // Método para validar todos los campos juntos
   validateData(): boolean {
     return this.validateName(this.estudiante.nombre) &&
            this.validateEmail(this.estudiante.correo) &&
