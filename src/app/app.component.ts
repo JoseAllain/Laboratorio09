@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-
 @Component({
+  imports: [CommonModule, RouterOutlet,],
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  styleUrl: './app.component.scss',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'classcraft';
